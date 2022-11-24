@@ -1,4 +1,4 @@
-import des
+import probabilityCipher
 import inquirer
 
 
@@ -13,7 +13,7 @@ def validate(key):
         return key
 
 
-print('Hello. I am DES')
+print('Hello. I am Probability Cipher')
 question = [inquirer.List('action', message='Select an option', choices=[
                           ('Encrypt string', '1'), ('Decrypt string', '2')])]
 
@@ -27,11 +27,11 @@ print()
 text = input('Your text:')
 
 if action == '1':
-    result = des.encrypt(text, key)
+    result = probabilityCipher.encrypt(text, key)
     print('key: ' + str(result[0]))
     print('code: ' + str(result[1]))
 
 if action == '2':
-    result = des.decrypt(key, text)
+    result = probabilityCipher.decrypt(key, text)
     print('text: ' + str(result[0]))
     print('key: ' + str(result[1]))
